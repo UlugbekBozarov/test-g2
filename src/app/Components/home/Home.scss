@@ -1,0 +1,265 @@
+#home {
+    display: flex;
+    color: #fff;
+    min-height: 100vh;
+    .home_left {
+        width: 66%;
+        padding: 20px;
+        padding-top: 30px;
+        padding-right: 40px;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .title {
+                h1 {
+                    margin-bottom: 0;
+                    color: #fff;
+                }
+                p {
+                    margin-bottom: 0;
+                    color: rgb(197, 192, 192);
+                }
+            }
+            .input-group {
+                width: 300px;
+                .input-group-prepend span {
+                    background-color: #2d303f;
+                    border-radius: 10px 0 0 10px;
+                    border: 2px solid rgb(48, 51, 66) !important;
+                    border-right: 0 !important;
+                    padding-left: 18px;
+                    i {
+                        color: rgb(231, 229, 229);
+                    }
+                }
+                input {
+                    padding: 22px !important;
+                    padding-left: 0 !important;
+                    color: rgb(230, 230, 230) !important;
+                    background-color: #2d303f;
+                    border: 0 !important;
+                    box-shadow: inset 0 0 0 0;
+                    border-radius: 0 10px 10px 0;
+                    border: 2px solid rgb(48, 51, 66) !important;
+                    border-left: 0 !important;
+                }
+            }
+        }
+
+        .category {
+            padding-top: 30px;
+            ul {
+                position: relative;
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                padding-left: 0;
+                padding-right: 20px;
+                li {
+                    position: relative;
+                    cursor: pointer;
+                    &.active {
+                        &::after {
+                            position: absolute;
+                            bottom: -5px;
+                            left: -2px;
+                            content: "";
+                            width: 50px;
+                            height: 5px;
+                            background-color: #ea7b69;
+                            border-radius: 3px;
+                            z-index: 999;
+                        }
+                    }
+                }
+                &::after {
+                    position: absolute;
+                    bottom: -5px;
+                    left: -2px;
+                    content: "";
+                    width: 100%;
+                    height: 5px;
+                    background-color: rgb(46, 49, 64);
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        .category_title {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            h2 {
+
+            }
+
+            select {
+                font-weight: 500;
+                width: 110px;
+                background-color: #1f1d2b;
+                color: rgb(221, 219, 219);
+                border: 2px solid rgb(48, 51, 66) !important;
+                border-radius: 7px;
+            }
+        }
+        .products {
+            .card {
+                position: relative;
+                background-color: #1f1d2b;
+                border-radius: 20px;
+                padding-top: 120px;
+                margin-top: 100px;
+
+                img {
+                    position: absolute;
+                    top: -65px;
+                    left: 40px;
+                    width: calc(100% - 80px);
+                    border-radius: 50%;
+                }
+
+                .card-body {
+                    text-align: center;
+                    h5 {
+                        color: rgb(226, 222, 222);
+                    }
+                    h6 {
+                        color: rgb(201, 198, 198);
+                    }
+                    p {
+                        color: rgb(180, 177, 177);
+                    }
+                }
+            }
+        }
+    }
+
+    .home_right {
+        width: 34%;
+        background-color: #1f1d2b;
+        padding: 20px;
+        padding-top: 30px;
+
+        .orders {
+            .title {
+
+            }
+
+            .btn-group {
+                .btn_outline_danger {
+                    border: 2px solid #2a2937;
+                    border-radius: 10px;
+                    margin-right: 5px;
+                    color: #ea7b69;
+
+                    &.active {
+                        background-color: #ea7b69;
+                        border: #ea7b69;
+                        color: #fff;
+                    }
+                }
+            }
+            .items {
+                .item_thead {
+                    display: flex;
+                    padding-top: 20px;
+                    .item_name {
+                        width: calc(100% - 140px);
+                    }
+                    .qty {
+                        width: 70px;
+                    }
+                    .price {
+                        width: 70px;
+                    }
+                }
+                hr {
+                    height: 2px;
+                    background-color: #2d303f;
+                }
+                .item_name {
+                    width: calc(100% - 140px);
+                    display: flex;
+                    overflow: hidden;
+                    
+                    .overflow-ellipsis {
+                        white-space: nowrap;
+                        text-align: left;
+                        overflow: hidden;
+                    }
+
+                    img {
+                        width: 50px;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+                .qty {
+                    width: 70px;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    div {
+                        width: 45px;
+                        height: 45px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 10px;
+                        background-color: #2d303f;
+                    }
+                }
+                .price {
+                    width: 70px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .description_block {
+                    display: flex;
+                    margin-top: 5px;
+                    .description {
+                        width: calc(100% - 70px);
+                        display: flex;
+                        align-items: center;
+                        input {
+                            height: 45px;
+                            background-color: #2d303f;
+                            border: 0 !important;
+                            border-radius: 10px;
+                            color: rgb(209, 205, 205);
+                        }
+                    }
+                    .delete {
+                        width: 70px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        div {
+                            width: 45px;
+                            height: 45px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 10px;
+                            border: 2px solid #ea7b69;
+                            color: #ea7b69;
+                            cursor: pointer;
+                            transition: all 0.2s ease-in-out;
+                            &:hover {
+                                border: 0;
+                                background-color: #ea7b69;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

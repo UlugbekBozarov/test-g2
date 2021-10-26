@@ -1,0 +1,16 @@
+#app {
+  box-sizing: border-box;
+  display: flex;
+  background-color: #252837;
+  .left {
+    width: 100px !important;
+    min-height: 100vh;
+    background-color: #1f1d2b;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .right {
+    width: calc(100% - 100px) !important;
+    min-height: 100vh;
+  }
+}
