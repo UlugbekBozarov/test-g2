@@ -21,6 +21,14 @@ const Home = () => {
         setActiveCategoryIndex(index)
     }
 
+    // const grandTotal = () => {
+    //     let total = 0;
+    //     for (let i = 0; i < cards.length; i++) {
+    //         total += cards.price * cards.quantity;
+    //     }
+    //     return total;
+    // }
+
     return (
         <div id="home">
             <div className="home_left">
@@ -72,7 +80,7 @@ const Home = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="home_body">
+                <div className="home_body scroll">
                     <div className="category_title">
                         <h2>Choose Dishes</h2>
                         <select className="form-control">
@@ -101,63 +109,75 @@ const Home = () => {
             </div>
             <div className="home_right">
                 <div className="orders">
-                    <div className="title">
-                        <h4>Order #34562</h4>
-                    </div>
-                    <div className="btn-group">
-                        <button className={activeButtonIndex === 0 ? "btn btn_outline_danger active" : "btn btn_outline_danger"} onClick={() => setActiveButtonIndex(0)}>Dine In</button>
-                        <button className={activeButtonIndex === 1 ? "btn btn_outline_danger active" : "btn btn_outline_danger"} onClick={() => setActiveButtonIndex(1)}>To go</button>
-                        <button className={activeButtonIndex === 2 ? "btn btn_outline_danger active" : "btn btn_outline_danger"} onClick={() => setActiveButtonIndex(2)}>Delivery</button>
-                    </div>
-                    <div className="items">
+                    <div className="items scroll">
+                        <div className="title">
+                            <h4 className="mb-3">Order #34562</h4>
+                        </div>
+                        <div className="btn-group">
+                            <button className={activeButtonIndex === 0 ? "btn btn_outline_danger active" : "btn btn_outline_danger"} onClick={() => setActiveButtonIndex(0)}>Dine In</button>
+                            <button className={activeButtonIndex === 1 ? "btn btn_outline_danger active" : "btn btn_outline_danger"} onClick={() => setActiveButtonIndex(1)}>To go</button>
+                            <button className={activeButtonIndex === 2 ? "btn btn_outline_danger active" : "btn btn_outline_danger"} onClick={() => setActiveButtonIndex(2)}>Delivery</button>
+                        </div>
                         <div className="item_thead">
                             <div className="item_name">Item</div>
                             <div className="qty">Qty</div>
                             <div className="price">Price</div>
                         </div>
                         <hr />
-                        {
-                            cards.orders.map((c, i) => {
-                                return (
-                                    <div className="mb-4" key={i}>
-                                        <div className="d-flex">
-                                            <div className="item_name">
-                                                <div>
-                                                    <img src={c.img} alt="food" />
+                        <div>
+                            {
+                                cards.orders.map((c, i) => {
+                                    return (
+                                        <div className="mb-4" key={i}>
+                                            <div className="d-flex">
+                                                <div className="item_name">
+                                                    <div>
+                                                        <img src={c.img} alt="food" />
+                                                    </div>
+                                                    <div className="d-flex align-items-center">
+                                                        <div className="w-100">
+                                                            <p className="overflow-ellipsis mb-0" style={{ textOverflow: "ellipsis" }}>{c.name}</p>
+                                                            <p className="mb-0"><small>${c.price}</small></p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="w-100">
-                                                        <p className="overflow-ellipsis mb-0" style={{ textOverflow: "ellipsis" }}>{c.name}</p>
-                                                        <p className="mb-0"><small>${c.price}</small></p>
+                                                <div className="qty">
+                                                    <div>
+                                                        {c.quantity}
+                                                    </div>
+                                                </div>
+                                                <div className="price">
+                                                    ${(c.price * c.quantity)}
+                                                </div>
+                                            </div>
+                                            <div className="description_block">
+                                                <div className="description">
+                                                    <input type="text" className="form-control" placeholder="Order Note..." />
+                                                </div>
+                                                <div className="delete">
+                                                    <div>
+                                                        <i className="far fa-trash-alt"></i>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="qty">
-                                                <div>
-                                                    {c.quantity}
-                                                </div>
-                                            </div>
-                                            <div className="price">
-                                                ${(c.price * c.quantity)}
-                                            </div>
                                         </div>
-                                        <div className="description_block">
-                                            <div className="description">
-                                                <input type="text" className="form-control" placeholder="Order Note..." />
-                                            </div>
-                                            <div className="delete">
-                                                <div>
-                                                <i className="far fa-trash-alt"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            })
-                        }
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
-                    <div>
-                        
+                    <div className="sub_total">
+                        <div className="d-flex justify-content-between">
+                            <h6>Discount</h6>
+                            <h6>$0</h6>
+                        </div>
+                        <div className="d-flex justify-content-between" >
+                            <h6>Sub Total</h6>
+                            <h6>$21.03</h6>
+                        </div>
+                        <div className="mt-2">
+                            <button className="btn btn-danger">Continue to Payment</button>
+                        </div>
                     </div>
                 </div>
             </div>
